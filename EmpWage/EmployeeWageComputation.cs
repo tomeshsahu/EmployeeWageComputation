@@ -18,30 +18,34 @@ namespace EmpWage
             int salary = 0;
             int empHrs = 0;
             int totalSalary = 0;
+            int totalHrs = 0;
             for (int day = 1; day <= 20; day++)
             {
-                Random random = new Random();
-                int Check = random.Next(0, 3);
-
-                switch (Check)
+                while (totalHrs < 100)
                 {
-                    case EMP_FULL_TIME:
-                        empHrs = 8;
-                        break;
+                    Random random = new Random();
+                    int Check = random.Next(0, 3);
 
-                    case EMP_PART_TIME:
-                        empHrs = 4;
-                        break;
+                    switch (Check)
+                    {
+                        case EMP_FULL_TIME:
+                            empHrs = 8;
+                            break;
 
-                    default:
-                        empHrs = 0;
-                        break;
+                        case EMP_PART_TIME:
+                            empHrs = 4;
+                            break;
 
+                        default:
+                            empHrs = 0;
+                            break;
+
+                    }
+                    totalHrs = totalHrs + empHrs;
+                    salary = empHrs * empRatePerHrs;
+                    totalSalary = totalSalary + salary;
+                    Console.WriteLine("Day" + day + " " + "Salary" + " " + salary);
                 }
-                salary = empHrs * empRatePerHrs;
-                totalSalary = totalSalary + salary;
-                Console.WriteLine("Day"+ day +" " + "Salary" + " " + salary);
-
             }
             Console.WriteLine("Total Salary" + " " +totalSalary);
         }
