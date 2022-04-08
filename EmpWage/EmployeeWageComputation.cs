@@ -8,36 +8,42 @@ namespace EmpWage
 {
     public class EmployeeWageComputation
     {
-        
-      const int EMP_FULL_TIME = 1;
-      const int EMP_PART_TIME= 2;
-      const int empRatePerHrs = 20;
+
+        const int EMP_FULL_TIME = 1;
+        const int EMP_PART_TIME = 2;
+        const int empRatePerHrs = 20;
+        const int WorkingDay = 20;
         public void Tomesh()
         {
             int salary = 0;
             int empHrs = 0;
-
-            Random random = new Random();
-            int Check = random.Next(0, 3);
-
-            switch (Check)
+            int totalSalary = 0;
+            for (int day = 1; day <= 20; day++)
             {
-                case EMP_FULL_TIME:
-                    empHrs = 8;
-                    break;
+                Random random = new Random();
+                int Check = random.Next(0, 3);
 
-                case EMP_PART_TIME:
-                    empHrs = 4;
-                    break;
+                switch (Check)
+                {
+                    case EMP_FULL_TIME:
+                        empHrs = 8;
+                        break;
 
-                default:
-                    empHrs = 0;
-                    break;
+                    case EMP_PART_TIME:
+                        empHrs = 4;
+                        break;
+
+                    default:
+                        empHrs = 0;
+                        break;
 
                 }
-                salary = empHrs* empRatePerHrs;
-                Console.WriteLine("Employee Salary" + " " + salary );
-                 
+                salary = empHrs * empRatePerHrs;
+                totalSalary = totalSalary + salary;
+                Console.WriteLine("Day"+ day +" " + "Salary" + " " + salary);
+
+            }
+            Console.WriteLine("Total Salary" + " " +totalSalary);
         }
     }
 }
