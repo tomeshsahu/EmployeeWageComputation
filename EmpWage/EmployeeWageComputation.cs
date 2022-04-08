@@ -8,26 +8,36 @@ namespace EmpWage
 {
     public class EmployeeWageComputation
     {
-        int EmpFullTime = 1;
-        int FullTimeWorkingHrs = 8;
-        int PartTimeWorkingHrs = 4;
-        int EmpWorkingHrs = 20;
+        
+      const int EMP_FULL_TIME = 1;
+      const int EMP_PART_TIME= 2;
+      const int empRatePerHrs = 20;
         public void Tomesh()
         {
-           Random random=new Random();
-            int Check = random.Next(0, 2);
-            if (Check == EmpFullTime)
+            int salary = 0;
+            int empHrs = 0;
+
+            Random random = new Random();
+            int Check = random.Next(0, 3);
+
+            switch (Check)
             {
-                int Salary = (FullTimeWorkingHrs * EmpWorkingHrs);
-                Console.WriteLine("Employee is Working Fulltime" + "Salary" +" " + Salary);
-            }
-            else if(Check == PartTimeWorkingHrs)
-            {
-                int Salary = (PartTimeWorkingHrs * EmpWorkingHrs);
-                Console.WriteLine("Employee is Working PartTime" + "Salary"+ " " + Salary);
-            }
-            else
-                Console.WriteLine("Absent");
+                case EMP_FULL_TIME:
+                    empHrs = 8;
+                    break;
+
+                case EMP_PART_TIME:
+                    empHrs = 4;
+                    break;
+
+                default:
+                    empHrs = 0;
+                    break;
+
+                }
+                salary = empHrs* empRatePerHrs;
+                Console.WriteLine("Employee Salary" + " " + salary );
+                 
         }
     }
 }
