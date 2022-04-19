@@ -8,21 +8,29 @@ namespace EmpWage
 {
     class EmployeeWageComputation
     {
+        //Constant
         const int Is_Full_Time = 1;
         const int Is_Part_Time = 2;
-        const int employeeWorkingHrs = 20;
-        const int employeeWorkingDays = 20;
-        public void EmployeeWage()
+
+        //variable
+        string CompanyName;
+         int EmpSalaryPerHrs;
+         int CompanyMaxWorkingHrs;
+        int CompanyMaxWorkingDay;
+        public void CompanyWage(string CompanyName,int EmpSalaryPerHrs, int CompanyMaxWorkingHrs, int CompanyMaxWorkingDay)
         {
-            int salary = 0;
             int totalSalary = 0;
             int empHrs = 0;
-            int sum = 0;
+            int totalEmpHrs = 0;
 
-            for (int i = 1; i <= 20; i++)
-            {
-                
-                
+            this.EmpSalaryPerHrs = EmpSalaryPerHrs;
+            this.CompanyName = CompanyName;
+            this.CompanyMaxWorkingHrs= CompanyMaxWorkingHrs;
+            this.CompanyMaxWorkingDay = CompanyMaxWorkingDay;
+
+
+            for (int i = 1; i <= CompanyMaxWorkingDay; i++)
+            {   
                     Random random = new Random();
                     int check = random.Next(0, 3);
 
@@ -38,18 +46,19 @@ namespace EmpWage
                             empHrs = 0;
                             break;
                     }
-
-                    salary = empHrs * employeeWorkingHrs;
-                    Console.WriteLine("Day"+i+ " "+salary);
-                    totalSalary = totalSalary + salary;
-                    if(empHrs<=100)
+                int salary = empHrs * EmpSalaryPerHrs;
+                Console.WriteLine("Day" +i +" = " + salary);
+                if (empHrs<= CompanyMaxWorkingDay)
                 {
-                    sum = sum + empHrs;
+                    totalEmpHrs = totalEmpHrs + empHrs;
                 }
-                }
+                    totalSalary=totalEmpHrs* EmpSalaryPerHrs; ;
+            }
+
+            Console.WriteLine(" Company Name" + " = " + CompanyName);
+            Console.WriteLine("Company per Hrs Salary" + " = " + EmpSalaryPerHrs);
+            Console.WriteLine("Total Salary of Company"+" = "+totalSalary);
             
-            Console.WriteLine("Total Salary of 20days"+" ="+totalSalary);
-            Console.WriteLine("Total Working Hrs is"+" "+sum);
 
         }
     }
