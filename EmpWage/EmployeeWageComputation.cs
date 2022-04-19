@@ -38,6 +38,7 @@ namespace EmpWage
                             empHrs = 0;
                             break;
                     }
+
                     salary = empHrs * employeeWorkingHrs;
                     Console.WriteLine("Day"+i+ " "+salary);
                     totalSalary = totalSalary + salary;
