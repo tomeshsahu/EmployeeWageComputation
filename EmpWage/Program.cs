@@ -1,5 +1,11 @@
 ﻿using System;
 using EmpWage;
 
-EmployeeWageComputation Emp=new EmployeeWageComputation();
-Emp.Tomesh();
+class program
+{
+    public static void Main(string[] args)
+    {
+        EmployeeWageComputation Emp = new EmployeeWageComputation();
+        Emp.EmployeeWage();
+    }
+}

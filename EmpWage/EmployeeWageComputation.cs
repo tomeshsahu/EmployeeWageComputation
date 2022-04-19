@@ -6,48 +6,51 @@ using System.Threading.Tasks;
 
 namespace EmpWage
 {
-    public class EmployeeWageComputation
+    class EmployeeWageComputation
     {
-
-        const int EMP_FULL_TIME = 1;
-        const int EMP_PART_TIME = 2;
-        const int empRatePerHrs = 20;
-        const int WorkingDay = 20;
-        public void Tomesh()
+        const int Is_Full_Time = 1;
+        const int Is_Part_Time = 2;
+        const int employeeWorkingHrs = 20;
+        const int employeeWorkingDays = 20;
+        public void EmployeeWage()
         {
             int salary = 0;
-            int empHrs = 0;
             int totalSalary = 0;
-            int totalHrs = 0;
-            for (int day = 1; day <= 20; day++)
-            {
-                while (totalHrs < 100)
-                {
-                    Random random = new Random();
-                    int Check = random.Next(0, 3);
+            int empHrs = 0;
+            int sum = 0;
 
-                    switch (Check)
+            for (int i = 1; i <= 20; i++)
+            {
+                
+                
+                    Random random = new Random();
+                    int check = random.Next(0, 3);
+
+                    switch (check)
                     {
-                        case EMP_FULL_TIME:
+                        case Is_Full_Time:
                             empHrs = 8;
                             break;
-
-                        case EMP_PART_TIME:
+                        case Is_Part_Time:
                             empHrs = 4;
                             break;
-
                         default:
                             empHrs = 0;
                             break;
-
                     }
-                    totalHrs = totalHrs + empHrs;
-                    salary = empHrs * empRatePerHrs;
+                    salary = empHrs * employeeWorkingHrs;
+                    Console.WriteLine("Day"+i+ " "+salary);
                     totalSalary = totalSalary + salary;
-                    Console.WriteLine("Day" + day + " " + "Salary" + " " + salary);
+                    if(empHrs<=100)
+                {
+                    sum = sum + empHrs;
                 }
-            }
-            Console.WriteLine("Total Salary" + " " +totalSalary);
+                }
+            
+            Console.WriteLine("Total Salary of 20days"+" ="+totalSalary);
+            Console.WriteLine("Total Working Hrs is"+" "+sum);
+
         }
     }
 }
+
