@@ -17,7 +17,7 @@ namespace EmpWage
          int EmpSalaryPerHrs;
          int CompanyMaxWorkingHrs;
         int CompanyMaxWorkingDay;
-        public void CompanyWage(string CompanyName,int EmpSalaryPerHrs, int CompanyMaxWorkingHrs, int CompanyMaxWorkingDay)
+        public EmployeeWageComputation(string CompanyName,int EmpSalaryPerHrs, int CompanyMaxWorkingHrs, int CompanyMaxWorkingDay)
         {
             int totalSalary = 0;
             int empHrs = 0;

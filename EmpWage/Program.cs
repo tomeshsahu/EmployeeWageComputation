@@ -6,7 +6,6 @@ class program
 
     public static void Main(string[] args)
     {
-        EmployeeWageComputation company = new EmployeeWageComputation();
         Console.WriteLine("Enter the Compnay Name");
         string CompanyName = Console.ReadLine();
         Console.WriteLine("Enter the Employee Salary Per Hours");
@@ -15,7 +14,9 @@ class program
         int CompanyMaxWorkingHrs = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Enter the Working Days in 1 Month");
         int CompanyMaxWorkingDay = Convert.ToInt32(Console.ReadLine());
+        EmployeeWageComputation company = new EmployeeWageComputation(CompanyName, EmpSalaryPerHrs, CompanyMaxWorkingHrs, CompanyMaxWorkingDay);
+   
 
-        company.CompanyWage(CompanyName, EmpSalaryPerHrs, CompanyMaxWorkingHrs, CompanyMaxWorkingDay);
+       
     }
 }
