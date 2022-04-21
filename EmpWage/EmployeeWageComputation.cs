@@ -15,18 +15,18 @@ namespace EmpWage
         //variable
         string CompanyName;
          int EmpSalaryPerHrs;
-         int CompanyMaxWorkingHrs;
+         int CompanyMaxWorkingPerHrs;
         int CompanyMaxWorkingDay;
-        public EmployeeWageComputation()
+        public void Compute(string CompanyName, int EmpSalaryPerHrs, int CompanyMaxWorkingPerHrs, int CompanyMaxWorkingDay)
         {           
             int totalSalary = 0;
             int empHrs = 0;
             int totalEmpHrs = 0;
 
-            int EmpSalaryPerHrs = 20;
-            string CompanyName = "Xamptech";
-            int CompanyMaxWorkingHrs= 100;
-            int CompanyMaxWorkingDay = 20;
+             this.EmpSalaryPerHrs = EmpSalaryPerHrs;
+            this.CompanyName = CompanyName;
+            this.CompanyMaxWorkingPerHrs = CompanyMaxWorkingPerHrs;
+            this.CompanyMaxWorkingDay = CompanyMaxWorkingDay;
 
 
             for (int i = 1; i <= CompanyMaxWorkingDay; i++)
