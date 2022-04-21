@@ -17,16 +17,16 @@ namespace EmpWage
          int EmpSalaryPerHrs;
          int CompanyMaxWorkingHrs;
         int CompanyMaxWorkingDay;
-        public EmployeeWageComputation(string CompanyName,int EmpSalaryPerHrs, int CompanyMaxWorkingHrs, int CompanyMaxWorkingDay)
-        {
+        public EmployeeWageComputation()
+        {           
             int totalSalary = 0;
             int empHrs = 0;
             int totalEmpHrs = 0;
 
-            this.EmpSalaryPerHrs = EmpSalaryPerHrs;
-            this.CompanyName = CompanyName;
-            this.CompanyMaxWorkingHrs= CompanyMaxWorkingHrs;
-            this.CompanyMaxWorkingDay = CompanyMaxWorkingDay;
+            int EmpSalaryPerHrs = 20;
+            string CompanyName = "Xamptech";
+            int CompanyMaxWorkingHrs= 100;
+            int CompanyMaxWorkingDay = 20;
 
 
             for (int i = 1; i <= CompanyMaxWorkingDay; i++)
@@ -56,6 +56,7 @@ namespace EmpWage
             }
 
             Console.WriteLine(" Company Name" + " = " + CompanyName);
+            Console.WriteLine(" Total Emp Hrs" + " = " + totalEmpHrs);
             Console.WriteLine("Company per Hrs Salary" + " = " + EmpSalaryPerHrs);
             Console.WriteLine("Total Salary of Company"+" = "+totalSalary);
             
